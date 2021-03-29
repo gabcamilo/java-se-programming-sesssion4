@@ -1,6 +1,7 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import static java.math.RoundingMode.HALF_UP;
 import static labs.pm.data.Rating.*;
@@ -57,5 +58,21 @@ public class Product {
                ", name='" + name + '\'' +
                ", price=" + price +
                ", rating=" + rating.getStars();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+//        if (o instanceof Product) {
+        if (o != null && getClass() == o.getClass()) {
+            final Product other = (Product) o;
+            return this.id == other.id && Objects.equals(this.name, other.name);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
