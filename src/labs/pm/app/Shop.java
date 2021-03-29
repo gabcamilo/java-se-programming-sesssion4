@@ -13,7 +13,7 @@ public class Shop {
         Product p4 = new Product();
         Product p5 = p1.applyRating(Rating.THREE_STAR);
         Product p6 = new Drink(104, "Chocolate", BigDecimal.valueOf(3.99),Rating.FIVE_STAR);
-        Product p7 = new Food(104, "Chocolate", BigDecimal.valueOf(3.99),Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+        Product p7 = new Food(104, "Chocolate", BigDecimal.valueOf(3.99),Rating.FIVE_STAR, LocalDate.now());
 
         System.out.println(p6.equals(p7));
         System.out.println(p5.equals(p1));

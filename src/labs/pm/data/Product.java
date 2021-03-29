@@ -56,7 +56,7 @@ public class Product {
     public String toString() {
         return "id=" + id +
                ", name='" + name + '\'' +
-               ", price=" + price +
+               ", price=" + price.subtract(getDiscount()) +
                ", rating=" + rating.getStars();
     }
 

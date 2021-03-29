@@ -3,6 +3,8 @@ package labs.pm.data;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import static java.math.RoundingMode.HALF_UP;
+
 public class Food extends Product {
     private LocalDate bestBefore;
 
@@ -13,6 +15,12 @@ public class Food extends Product {
 
     public LocalDate getBestBefore() {
         return bestBefore;
+    }
+
+    @Override
+    public BigDecimal getDiscount() {
+        return (bestBefore.isEqual(LocalDate.now()))
+                ? super.getDiscount() : BigDecimal.ZERO;
     }
 
     @Override
