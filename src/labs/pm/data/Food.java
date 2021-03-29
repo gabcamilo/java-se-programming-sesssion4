@@ -18,6 +18,11 @@ public class Food extends Product {
     }
 
     @Override
+    public Product applyRating(Rating newRating) {
+        return new Food(this.getId(),this.getName(), this.getPrice(), newRating, this.bestBefore);
+    }
+
+    @Override
     public BigDecimal getDiscount() {
         return (bestBefore.isEqual(LocalDate.now()))
                 ? super.getDiscount() : BigDecimal.ZERO;
