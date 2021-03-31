@@ -7,7 +7,7 @@ import java.util.Objects;
 import static java.math.RoundingMode.HALF_UP;
 import static labs.pm.data.Rating.*;
 
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
     private final int id;
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
     private final String name;
@@ -41,11 +41,11 @@ public abstract class Product {
         return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
     }
 
+    @Override
     public Rating getRating() {
         return rating;
     }
 
-    public abstract Product applyRating(Rating newRating);
 
     // defaults bestBefore date for "today" when there is no specialization of this method in the subclasses
     public LocalDate getBestBefore() {
