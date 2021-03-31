@@ -15,6 +15,13 @@ public class Shop {
         Product p6 = new Drink(104, "Chocolate", BigDecimal.valueOf(3.99),Rating.FIVE_STAR);
         Product p7 = new Food(104, "Chocolate", BigDecimal.valueOf(3.99),Rating.FIVE_STAR, LocalDate.now());
 
+        //getBestBefore is not polymorphic, so to invoke it safely it is necessary to verify its type
+        if(p3 instanceof Food){
+            LocalDate bestBefore = ((Food)p3).getBestBefore();
+            System.out.println(bestBefore);
+        }
+
+
         System.out.println(p6.equals(p7));
         System.out.println(p5.equals(p1));
 
