@@ -1,6 +1,7 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import static java.math.RoundingMode.HALF_UP;
@@ -49,6 +50,11 @@ public abstract class Product {
     }
 
     public abstract Product applyRating(Rating newRating);
+
+    // defaults bestBefore date for "today" when there is no specialization of this method in the subclasses
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
+    }
 
     @Override
     public String toString() {

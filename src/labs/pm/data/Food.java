@@ -13,6 +13,7 @@ public class Food extends Product {
         this.bestBefore = bestBefore;
     }
 
+    @Override
     public LocalDate getBestBefore() {
         return bestBefore;
     }
