@@ -20,4 +20,11 @@ public class Drink extends Product {
     public Product applyRating(Rating newRating) {
         return new Drink(this.getId(),this.getName(), this.getPrice(), newRating);
     }
+
+    @Override
+    public String toString() {
+        return "Drink {" +
+                super.toString() +
+                '}';
+    }
 }

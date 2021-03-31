@@ -31,9 +31,8 @@ public class Food extends Product {
 
     @Override
     public String toString() {
-        return "Food{" +
+        return "Food {" +
                 super.toString() +
-                ", bestBefore=" + bestBefore +
                 '}';
     }
 }

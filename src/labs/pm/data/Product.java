@@ -61,7 +61,8 @@ public abstract class Product {
         return "id=" + id +
                ", name='" + name + '\'' +
                ", price=" + price.subtract(getDiscount()) +
-               ", rating=" + rating.getStars();
+               ", rating=" + rating.getStars() +
+               "best before=" + getBestBefore();
     }
 
     @Override
